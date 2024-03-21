@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -12,16 +13,20 @@ function App() {
 }
 
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>;
+  return (
+    <header className="header">
+      <h1>Fast React Pizza Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our menu</h2>
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
@@ -32,11 +37,21 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  return <footer>{new Date().toLocaleTimeString} We're currently open</footer>;
+  return (
+    <footer className="footer">
+      {new Date().toLocaleTimeString} We're currently open
+    </footer>
+  );
 }
 
 function Pizza() {
-  return <h2>Pizza</h2>;
+  return (
+    <div>
+      <img src="pizzas/spinaci.jpg" alt="Pizza spinaci"></img>
+      <h3>Pizza Spinaci</h3>
+      <p>Tomato, mozzarella, spinach and ricotta cheese</p>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
