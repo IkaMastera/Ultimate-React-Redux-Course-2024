@@ -3,8 +3,8 @@ import React from "react";
 const BillComponent = ({ onBillChange }) => {
   return (
     <div>
-      <label>How much was the bill?</label>
-      <input type="number" onChange={(e) => onBillChange(e.target.value)} />
+      <p>How much was the bill?</p>
+      <input type="number" onChange={(e) => onBillChange(e.target.value)} />;
     </div>
   );
 };
